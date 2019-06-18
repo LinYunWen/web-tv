@@ -1,0 +1,23 @@
+
+.categoryRow {
+    flex-wrap: nowrap;
+    margin: 0;
+    overflow: scroll;
+    width: 100%;
+}
+
+.channel {
+    width: 80vw;
+    height: 80vh;
+    margin: 3vh 5vw 3vh 0;
+    display: inline-block;
+    iframe {
+        border: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.favoriteCard {
+    margin: 3vw 0;
+}

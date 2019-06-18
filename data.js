@@ -1,5 +1,6 @@
 export default {
     news: {
+        isIframe: true,
         parameters: {
             controls: 0,
             autoplay: 1,
@@ -27,36 +28,69 @@ export default {
                 title: "華視新聞",
                 videoId: "TL8mmew3jb8"
             },
+            // {
+            //     number: 13,
+            //     title: "公共電視",
+            //     videoId: "_isseGKrquc"
+            // },
+            // {
+            //     number: 51,
+            //     title: "東森新聞",
+            //     videoId: "K_QgVWKW7TQ"
+            // },
+            // {
+            //     number: 52,
+            //     title: "中天新聞",
+            //     videoId: "wUPPkSANpyo"
+            // },
+            // {
+            //     number: 53,
+            //     title: "民視新聞",
+            //     videoId: "XxJKnDLYZz4"
+            // },
+            // {
+            //     number: 54,
+            //     title: "三立新聞",
+            //     videoId: "4ZVUmEUFwaY"
+            // },
+            // {
+            //     number: 55,
+            //     title: "TVBS 新聞",
+            //     videoId: "Hu1FkdAOws0"
+            // }
+        ]
+    },
+    favorite: {
+        isIframe: false,
+        videos: [
             {
-                number: 13,
-                title: "公共電視",
-                videoId: "_isseGKrquc"
+                url: "https://sideex.io",
+                image: "https://sideex.io/cover.png",
+                title: "SideeX",
+                subtitle: "SideeX",
+                description: "Quickly creating test cases for web regression and cross-browser testing without writing a single line of code."
             },
             {
-                number: 51,
-                title: "東森新聞",
-                videoId: "K_QgVWKW7TQ"
+                url: "https://sideex.io",
+                image: "https://sideex.io/cover.png",
+                title: "SideeX",
+                subtitle: "SideeX",
+                description: "Quickly creating test cases for web regression and cross-browser testing without writing a single line of code."
             },
             {
-                number: 52,
-                title: "中天新聞",
-                videoId: "wUPPkSANpyo"
+                url: "https://sideex.io",
+                image: "https://sideex.io/cover.png",
+                title: "SideeX",
+                subtitle: "SideeX",
+                description: "Quickly creating test cases for web regression and cross-browser testing without writing a single line of code."
             },
             {
-                number: 53,
-                title: "民視新聞",
-                videoId: "XxJKnDLYZz4"
+                url: "https://sideex.io",
+                image: "https://sideex.io/cover.png",
+                title: "SideeX",
+                subtitle: "SideeX",
+                description: "Quickly creating test cases for web regression and cross-browser testing without writing a single line of code."
             },
-            {
-                number: 54,
-                title: "三立新聞",
-                videoId: "4ZVUmEUFwaY"
-            },
-            {
-                number: 55,
-                title: "TVBS 新聞",
-                videoId: "Hu1FkdAOws0"
-            }
         ]
     }
 }

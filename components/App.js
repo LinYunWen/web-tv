@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from "reactstrap";
 import Category from "./Category";
 
 class App extends React.Component {
@@ -8,10 +9,10 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <Container fluid={true}>
                 <Category type="news" />
-                {/* <Category type="online" /> */}
-            </div>
+                <Category type="favorite" />
+            </Container>
         )
     }
 }
