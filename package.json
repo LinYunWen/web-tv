@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "dev": "webpack-dev-server --devtool eval --progress --colors",
+    "start": "cd backend && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,6 +32,7 @@
     "@babel/preset-react": "^7.0.0",
     "@fortawesome/fontawesome-free": "^5.9.0",
     "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.0",
     "css-loader": "^3.0.0",
     "file-loader": "^4.0.0",
     "html-loader": "^0.5.5",
