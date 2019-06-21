@@ -2,8 +2,8 @@ export default {
     news: {
         isIframe: true,
         parameters: {
-            controls: 0,
-            autoplay: 1,
+            controls: 1,
+            autoplay: 0,
             fs: 1,
             rel: 0
         },
@@ -11,7 +11,7 @@ export default {
             {
                 number: 5,
                 title: "CNN 新聞",
-                videoId: "kW7FpFsBPiY"
+                videoId: "AfYaMnVLaLM"
             },
             {
                 number: 8,
@@ -21,7 +21,7 @@ export default {
             {
                 number: 10,
                 title: "中視新聞",
-                videoId: "nmZUSI55CfA"
+                videoId: "hVNbIZYi1nI"
             },
             {
                 number: 12,
