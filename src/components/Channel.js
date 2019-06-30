@@ -9,11 +9,12 @@ class Channel extends React.Component {
 
     render() {
         let data = this.props.data;
+        let params = this.props.params;
         return (
             <Col xs="10" className={cls.channel}>
-                <iframe src={`https://www.youtube.com/embed/${data.videoId}?controls=${data.controls}&autoplay=0=${data.autoplay}&fs=${data.fs}&rel=${data.rel}`}
+                <iframe src={`https://www.youtube.com/embed/${data.videoId}?controls=${params.controls}&autoplay=${params.autoplay}&fs=${params.fs}&rel=${params.rel}`}
                     allow={"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"}
-                    frameBorder={"0"} allowFullScreen
+                    frameBorder={"0"} allowFullScreen autoPlay
                 ></iframe>
             </Col>
         )

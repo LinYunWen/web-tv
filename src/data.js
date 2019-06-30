@@ -1,7 +1,7 @@
 export default {
     news: {
         isIframe: true,
-        parameters: {
+        params: {
             controls: 1,
             autoplay: 0,
             fs: 1,

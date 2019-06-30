@@ -14,7 +14,7 @@ class Category extends React.Component {
         let category = data[type];
         return category.isIframe ?
             category.videos.map((channel, index) => {
-                return (<Channel key={index} data={channel}></Channel>);
+                return (<Channel key={index} data={channel} params={category.params}></Channel>);
             }) :
             category.videos.map((video, index) => {
                 return (<FavoriteCard key={index} data={video}></FavoriteCard>);
