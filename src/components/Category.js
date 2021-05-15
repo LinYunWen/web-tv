@@ -10,12 +10,10 @@ class Category extends React.Component {
         super(props);
     }
 
-    createChannels(type) {
+    createContent(type) {
         let category = data[type];
-        return category.isIframe ?
-            category.videos.map((channel, index) => {
-                return (<Channel key={index} data={channel} params={category.params}></Channel>);
-            }) :
+        return type === "news" ?
+            (<Channel data={category} params={category.params}></Channel>) :
             category.videos.map((video, index) => {
                 return (<FavoriteCard key={index} data={video}></FavoriteCard>);
             });
@@ -25,9 +23,9 @@ class Category extends React.Component {
     render() {
         return (
             <Container fluid={true}>
-                <Row><h1>{this.props.type}</h1></Row>
+                <Row id={this.props.type}><h1>{this.props.type}</h1></Row>
                 <Row className={cls.categoryRow}>
-                    {this.createChannels(this.props.type)}
+                    {this.createContent(this.props.type)}
                 </Row>
             </Container>
         )
