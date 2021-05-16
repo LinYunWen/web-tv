@@ -12,23 +12,9 @@ class Category extends React.Component {
 
     createContent(type) {
         let category = data[type];
-        if (type === "news") {
-            return (
-                <Col>
-                    <Channel data={category} params={category.params} />
-                </Col>
-            );
-        } else {
-            return (
-                category.videos.map((video, index) => {
-                    return (
-                        <Col xs="4">
-                            <FavoriteCard key={index} data={video} />
-                        </Col>
-                    );
-                })
-            );
-        }
+        return type === "news" ?
+            (<Channel data={category} params={category.params} />) :
+            (<FavoriteCard data={category} />);
     }
 
     render() {
@@ -38,7 +24,9 @@ class Category extends React.Component {
                     <Col><h1>{this.props.type}</h1></Col>
                 </Row>
                 <Row className={cls.categoryRow}>
-                    {this.createContent(this.props.type)}
+                    <Col>
+                        {this.createContent(this.props.type)}
+                    </Col>
                 </Row>
             </Container>
         )

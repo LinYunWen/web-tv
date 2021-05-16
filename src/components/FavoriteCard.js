@@ -1,18 +1,42 @@
 import React from 'react';
-import { Col, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Container, Row, Col, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 import cls from "./style.scss";
 
-const FavoriteCard = ({ data }) => {
-    return (
-        <Card>
-            <CardImg top width="100%" alt="Card image cap" src={data.image} />
-            <CardBody>
-                <CardTitle>{data.title}</CardTitle>
-                <CardSubtitle>{data.subtitle}</CardSubtitle>
-                <CardText>{data.description}</CardText>
-            </CardBody>
-        </Card>
-    );
-};
+export default class FavoriteCard extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-export default FavoriteCard;
+    genCards(videos) {
+        let temp = [];
+        let chunkSize = 3;
+        for (let i = 0; i < videos.length; i += chunkSize) {
+            temp.push(
+                <Row key={i} style={{ paddingBottom: "10px" }}>
+                    {videos.slice(i, i + chunkSize).map((video, j) => {
+                        return (
+                            <Col xs="4" key={j}>
+                                <Card>
+                                    <CardImg top width="100%" alt="Card image cap" src={video.image} />
+                                    <CardBody>
+                                        <CardTitle style={{ textAlign: "center", marginBottom: "0" }}>{video.title}</CardTitle>
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                        );
+                    })}
+                </Row>
+            )
+        }
+        return temp;
+    }
+
+    render() {
+        
+        return (
+            <Container fluid={true}>
+                {this.genCards(this.props.data.videos)}
+            </Container>
+        );
+    }
+};
