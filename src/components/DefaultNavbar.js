@@ -16,7 +16,7 @@ export default class DefaultNavbar extends React.Component {
     render() {
         return (
             <div>
-                <Navbar color="light" light expand="md">
+                <Navbar color="light" light expand="md" fixed="top">
                     <NavbarBrand href="/">Youtube TV</NavbarBrand>
                     <Collapse isOpen={true} navbar>
                         <Nav className="mr-auto" navbar>

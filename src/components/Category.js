@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import Channel from "./Channel";
 import FavoriteCard from './FavoriteCard';
 import data from "../data";
@@ -12,18 +12,31 @@ class Category extends React.Component {
 
     createContent(type) {
         let category = data[type];
-        return type === "news" ?
-            (<Channel data={category} params={category.params}></Channel>) :
-            category.videos.map((video, index) => {
-                return (<FavoriteCard key={index} data={video}></FavoriteCard>);
-            });
-
+        if (type === "news") {
+            return (
+                <Col>
+                    <Channel data={category} params={category.params} />
+                </Col>
+            );
+        } else {
+            return (
+                category.videos.map((video, index) => {
+                    return (
+                        <Col xs="4">
+                            <FavoriteCard key={index} data={video} />
+                        </Col>
+                    );
+                })
+            );
+        }
     }
 
     render() {
         return (
-            <Container fluid={true}>
-                <Row id={this.props.type}><h1>{this.props.type}</h1></Row>
+            <Container fluid={true} style={{ marginTop: "60px" }}>
+                <Row id={this.props.type}>
+                    <Col><h1>{this.props.type}</h1></Col>
+                </Row>
                 <Row className={cls.categoryRow}>
                     {this.createContent(this.props.type)}
                 </Row>

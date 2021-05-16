@@ -28,7 +28,6 @@ class Channel extends React.Component {
     }
 
     next = () => {
-        console.log(this.state.animating)
         if (this.state.animating) return;
         const nextIndex = this.state.activeIndex === this.length - 1 ? 0 : this.state.activeIndex + 1;
         this.setActiveIndex(nextIndex);
@@ -68,18 +67,17 @@ class Channel extends React.Component {
     render() {
         let data = this.props.data;
         return (
-            <Col xs="12" className={cls.channel}>
-                <Carousel
-                    activeIndex={this.state.activeIndex}
-                    next={this.next}
-                    previous={this.previous}
-                >
-                    <CarouselIndicators items={data.videos} activeIndex={this.state.activeIndex} onClickHandler={this.goToIndex} />
-                    {this.genSlides(data)}
-                    <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-                    <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-                </Carousel>
-            </Col>
+            <Carousel
+                activeIndex={this.state.activeIndex}
+                next={this.next}
+                previous={this.previous}
+                interval={false}
+            >
+                <CarouselIndicators items={data.videos} activeIndex={this.state.activeIndex} onClickHandler={this.goToIndex} />
+                {this.genSlides(data)}
+                <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+                <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+            </Carousel>
         )
     }
 }
