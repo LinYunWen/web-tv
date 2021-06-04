@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from "reactstrap";
 import Category from "./Category";
+import DefaultNavbar from "./DefaultNavbar";
 
 class App extends React.Component {
     constructor(props) {
@@ -9,10 +10,13 @@ class App extends React.Component {
 
     render() {
         return (
-            <Container fluid={true}>
-                <Category type="news" />
-                <Category type="favorite" />
-            </Container>
+            <React.Fragment>
+                <DefaultNavbar />
+                <Container fluid={true}>
+                    <Category type="news" />
+                    <Category type="favorite" />
+                </Container>
+            </React.Fragment>
         )
     }
 }

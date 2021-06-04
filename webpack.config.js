@@ -20,7 +20,8 @@ module.exports = {
         // contentBase: path.join(__dirname, 'dist'),
         contentBase: "./dist",
         compress: true,
-        hot: true
+        hot: true,
+        open: true
     },
     module: {
         rules: [
